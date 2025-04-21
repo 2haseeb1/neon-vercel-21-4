@@ -1,10 +1,12 @@
 import express, { Request, Response, Express } from 'express';
 import { PrismaClient } from '@prisma/client';
-
+import cors from 'cors'
 const prisma = new PrismaClient();
 const app: Express = express();
 
 app.use(express.json());
+
+app.use(cors())
 
 // Interface for user request body
 interface UserInput {
